@@ -15,9 +15,12 @@ should an assert get hit. */
 #include "Tree_Back_Managing_Task.h"
 #include "Tree_Back_Executing_Task.h"
 
+#include "Bico_MQTT_Definition.h"
 #include "Bico_MQTT_Utility.h"
 #include "Bico_MQTT_Packet_Type.h"
-#include "Bico_MQTT_Generate_Packet_Value.h"
+#include "Bico_MQTT_Packet_Quick_Init.h"
+#include "Bico_MQTT_Packet_Serialize.h"
+#include "Bico_MQTT_Packet_Deserialize.h"
 
 
 
@@ -120,11 +123,43 @@ void main_task(void* pvParameters)
 
 
 	// Setup - begin --------------------------------------------------------------------
+	MQTT_Pingreq_Packet_Handle packet = MQTTCreatePingreqPacket();
+	uint8_t* stream = (uint8_t*)MQTTPortMalloc(getStreamSizeAfterSerialize(packet));
+	MQTTPingreqSerialize(packet, stream);
 
-	MQTT_Unsuback_Packet_Handle x = MQTTCreateUnsubackPacket();
-	MQTTGenUnsubackValue(x, 69);
-	vTaskDelay(1000);
-	MQTTDeletePacket(x);
+	MQTT_Pingreq_Packet_Handle packet1 = MQTTCreatePingreqPacket();
+	MQTTPingreqDeserialize(stream, packet1);
+	uint8_t* stream1 = (uint8_t*)MQTTPortMalloc(getStreamSizeAfterSerialize(packet1));
+	MQTTPingreqSerialize(packet1, stream1);
+
+
+	printf("%d \r\n", getStreamSizeAfterSerialize(packet));
+
+	printf("\r\n");
+	printf("\r\n");
+	for (uint32_t i = 0; i < getStreamSizeAfterSerialize(packet); i++)
+	{
+		if (stream[i] < 0x10)
+		{
+			printf("0");
+		}
+		printf("%x ", stream[i]);
+	}
+	printf("\r\n");
+	printf("\r\n");
+	for (uint32_t i = 0; i < getStreamSizeAfterSerialize(packet); i++)
+	{
+		if (stream1[i] < 0x10)
+		{
+			printf("0");
+		}
+		printf("%x ", stream1[i]);
+	}
+	printf("\r\n");
+	printf("\r\n");
+
+	MQTTPortFree(packet);
+	MQTTPortFree(packet1);
 
 
 	// Setup - end --------------------------------------------------------------------

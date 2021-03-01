@@ -181,16 +181,22 @@
     <ClCompile Include="C:\C_Cpp_LIB\Tree_Back_Model\src\Tree_Back_Utility.c">
       <Filter>My_Code</Filter>
     </ClCompile>
-    <ClCompile Include="C:\C_Cpp_LIB\Bico_MQTT\src\Bico_MQTT_Utility.c">
+    <ClCompile Include="C:\C_Cpp_LIB\Bico_MQTT\src\Bico_MQTT_Packet_Deserialize.c">
+      <Filter>My_Code\Bico_MQTT</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\C_Cpp_LIB\Bico_MQTT\src\Bico_MQTT_Packet_Quick_Init.c">
+      <Filter>My_Code\Bico_MQTT</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\C_Cpp_LIB\Bico_MQTT\src\Bico_MQTT_Packet_Serialize.c">
       <Filter>My_Code\Bico_MQTT</Filter>
     </ClCompile>
     <ClCompile Include="C:\C_Cpp_LIB\Bico_MQTT\src\Bico_MQTT_Packet_Type.c">
       <Filter>My_Code\Bico_MQTT</Filter>
     </ClCompile>
-    <ClCompile Include="C:\C_Cpp_LIB\Bico_MQTT\src\Bico_MQTT_Generate_Packet_Value.c">
+    <ClCompile Include="C:\C_Cpp_LIB\Bico_MQTT\src\Bico_MQTT_Remaining_Length.c">
       <Filter>My_Code\Bico_MQTT</Filter>
     </ClCompile>
-    <ClCompile Include="C:\C_Cpp_LIB\Bico_MQTT\src\Bico_MQTT_Remaining_Length.c">
+    <ClCompile Include="C:\C_Cpp_LIB\Bico_MQTT\src\Bico_MQTT_Utility.c">
       <Filter>My_Code\Bico_MQTT</Filter>
     </ClCompile>
   </ItemGroup>

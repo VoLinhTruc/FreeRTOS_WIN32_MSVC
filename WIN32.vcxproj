@@ -76,7 +76,9 @@
     </Bscmake>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="C:\C_Cpp_LIB\Bico_MQTT\src\Bico_MQTT_Generate_Packet_Value.c" />
+    <ClCompile Include="C:\C_Cpp_LIB\Bico_MQTT\src\Bico_MQTT_Packet_Deserialize.c" />
+    <ClCompile Include="C:\C_Cpp_LIB\Bico_MQTT\src\Bico_MQTT_Packet_Quick_Init.c" />
+    <ClCompile Include="C:\C_Cpp_LIB\Bico_MQTT\src\Bico_MQTT_Packet_Serialize.c" />
     <ClCompile Include="C:\C_Cpp_LIB\Bico_MQTT\src\Bico_MQTT_Packet_Type.c" />
     <ClCompile Include="C:\C_Cpp_LIB\Bico_MQTT\src\Bico_MQTT_Remaining_Length.c" />
     <ClCompile Include="C:\C_Cpp_LIB\Bico_MQTT\src\Bico_MQTT_Utility.c" />
