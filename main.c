@@ -1,3 +1,4 @@
+//System #include - begin ---------------------------------------------------------------
 /* Standard includes. */
 #include <stdio.h>
 #include <stdlib.h>
@@ -7,14 +8,46 @@
 #include "FreeRTOS.h"
 #include "task.h"
 
-/* Utilities */
+//Utilities
+// This utilities.h is just aim to reduce the code complexibility ò the origin FreeRTOS Demo when we look at it
 #include "utilities.h"
+//System #include - begin ---------------------------------------------------------------
 
-/*-----------------------------------------------------------*/
 
-void task0(void* pvParameters);
+//---------------------------------------------------------------------------------------------------------------------------
 
-/*-----------------------------------------------------------*/
+
+//User #define - begin-----------------------------------------------------------
+
+//User #define - end-----------------------------------------------------------
+
+
+//User #include - begin-----------------------------------------------------------
+#include "Tree_Back_Model.h"
+#include "Tree_Back_Message_Queue.h"
+
+#include "Tree_Back_Managing_Task.h"
+#include "Tree_Back_Executing_Task.h"
+//User #include - end-----------------------------------------------------------
+
+
+//User typedef - begin-----------------------------------------------------------
+
+//User typedef - end-----------------------------------------------------------
+
+
+//User prototype - begin-----------------------------------------------------------
+
+//User prototype - end-----------------------------------------------------------
+
+
+//User variable - begin-----------------------------------------------------------
+
+//User variable - end-----------------------------------------------------------
+
+
+//---------------------------------------------------------------------------------------------------------------------------
+
 
 int main( void )
 {
@@ -28,33 +61,22 @@ int main( void )
     configASSERT( xTraceInitialize() == TRC_SUCCESS );
     configASSERT( xTraceEnable(TRC_START) == TRC_SUCCESS );
 
-    /*-----------------------------------------------------------*/
+    //---------------------------------------------------------------------------
 
-    xTaskCreate(task0,			/* The function that implements the task. */
-        "Rx", 							/* The text name assigned to the task - for debug only as it is not used by the kernel. */
-        configMINIMAL_STACK_SIZE, 		/* The size of the stack to allocate to the task. */
-        NULL, 							/* The parameter passed to the task - not used in this simple case. */
-        tskIDLE_PRIORITY + 2,/* The priority assigned to the task. */
-        NULL);
+    TB_Task_Handle tb_main_task = initTBTask();
+    createTBTask(NULL, 5, sizeof(TB_MQ_Handle), NULL, 0, 0, tbManagingTask, MANAGING_TASK_NAME, configMINIMAL_STACK_SIZE, tskIDLE_PRIORITY, &tb_main_task);
+    
+    //---------------------------------------------------------------------------
 
     vTaskStartScheduler();
-
     for (;;);
-
     return 0;
 }
 
-/*-----------------------------------------------------------*/
 
-void task0(void* pvParameters)
-{
-    (void)pvParameters;
+//---------------------------------------------------------------------------------------------------------------------------
 
-    for (;; )
-    {
-        taskENTER_CRITICAL();
-        printf("Hello \r\n");
-        vTaskDelay(500);
-        taskEXIT_CRITICAL();
-    }
-}
+
+//User function definition - begin-----------------------------------------------------------
+
+//User function definition  - end-----------------------------------------------------------
