@@ -42,7 +42,7 @@
 
 
 //User variable - begin-----------------------------------------------------------
-
+void task0(void* pvParameters);
 //User variable - end-----------------------------------------------------------
 
 
@@ -63,13 +63,19 @@ int main( void )
 
     //---------------------------------------------------------------------------
 
-    TB_Task_Handle tb_main_task = initTBTask();
-    createTBTask(NULL, 5, sizeof(TB_MQ_Handle), NULL, 0, 0, tbManagingTask, MANAGING_TASK_NAME, configMINIMAL_STACK_SIZE, tskIDLE_PRIORITY, &tb_main_task);
+    TB_Task_Handle tb_task0 = initTBTask();
+    createTBTask(NULL, 5, sizeof(TB_MQ_Handle), NULL, 0, 0, task0, "task0", configMINIMAL_STACK_SIZE, tskIDLE_PRIORITY, &tb_task0);
+
+    TB_Task_Handle tb_task1 = initTBTask();
+    createTBTask(NULL, 5, sizeof(TB_MQ_Handle), NULL, 0, 0, task0, "task1", configMINIMAL_STACK_SIZE, tskIDLE_PRIORITY, &tb_task1);
+
     
     //---------------------------------------------------------------------------
 
     vTaskStartScheduler();
+
     for (;;);
+    
     return 0;
 }
 
@@ -78,5 +84,21 @@ int main( void )
 
 
 //User function definition - begin-----------------------------------------------------------
+void task0(void* pvParameters)
+{
+    for (;;)
+    {
+        TB_Task_Handle tb_task = (TB_Task_Handle)pvParameters;
 
+        TaskHandle_t internal_task = xTaskGetHandle(pcTaskGetName(tb_task->task));
+        printf("Hello from %s \r\n", pcTaskGetName(internal_task));
+
+        if (strcmp(pcTaskGetName(internal_task), "task0") == 0)
+        {
+            deleteTBTask(&tb_task);
+        }
+
+        vTaskDelay(500);
+    }
+}
 //User function definition  - end-----------------------------------------------------------
