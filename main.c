@@ -36,14 +36,14 @@
 //User typedef - end-----------------------------------------------------------
 
 
-//User prototype - begin-----------------------------------------------------------
-
-//User prototype - end-----------------------------------------------------------
-
-
 //User variable - begin-----------------------------------------------------------
 void task0(void* pvParameters);
 //User variable - end-----------------------------------------------------------
+
+
+//User prototype - begin-----------------------------------------------------------
+
+//User prototype - end-----------------------------------------------------------
 
 
 //---------------------------------------------------------------------------------------------------------------------------
@@ -73,8 +73,6 @@ int main( void )
     //---------------------------------------------------------------------------
 
     vTaskStartScheduler();
-
-    for (;;);
     
     return 0;
 }
@@ -86,6 +84,7 @@ int main( void )
 //User function definition - begin-----------------------------------------------------------
 void task0(void* pvParameters)
 {
+    static int count = 0;
     for (;;)
     {
         TB_Task_Handle tb_task = (TB_Task_Handle)pvParameters;
@@ -93,11 +92,49 @@ void task0(void* pvParameters)
         TaskHandle_t internal_task = xTaskGetHandle(pcTaskGetName(tb_task->task));
         printf("Hello from %s \r\n", pcTaskGetName(internal_task));
 
-        if (strcmp(pcTaskGetName(internal_task), "task0") == 0)
+        if (strncmp(pcTaskGetName(internal_task), "task0", strlen("task0")) == 0)
         {
-            deleteTBTask(&tb_task);
+            //// delete the task itself test
+            //deleteTBTask(&tb_task);
+
+            TB_Task_Handle found_tb_task_handle = initTBTaskTable();
+            if (getTBTaskHandleByName("task1", &found_tb_task_handle) == GET_TB_TASK_HANDLE_BY_NAME_OK)
+            {
+                quickEnqueueTBMQ(found_tb_task_handle->qin, "From task 0", "This is message from task 0", pcTaskGetName(tb_task->task));
+            }
+            else
+            {
+                // avoid warning
+            }
+
+            if (count > 5)
+            {
+                deleteTBTask(&tb_task);
+            }
+        }
+        else if (strncmp(pcTaskGetName(internal_task), "task1", strlen("task1")) == 0)
+        {
+            char mess[20];
+            char data[20];
+            char src[20];
+            if (quickDequeueTBMQ(tb_task->qin, mess, data, src) == QUICK_DEQUEUE_OK)
+            {
+                printf("%s, %s, %s \r\n", mess, data, src);
+            }
+
+            if (count > 10)
+            {
+                deleteTBTask(&tb_task);
+            }
         }
 
+        printf("Number of task %d", getTBTaskCount());
+        if (getTBTaskCount() == 0)
+        {
+            return;
+        }
+
+        count++;
         vTaskDelay(500);
     }
 }
