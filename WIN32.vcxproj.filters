@@ -70,86 +70,17 @@
     <ClCompile Include="C:\C_Cpp_LIB\Third_Party\FreeRTOS\FreeRTOS\Source\FreeRTOS-Kernel\portable\MSVC-MingW\port.c">
       <Filter>FreeRTOS Source\Source\Portable</Filter>
     </ClCompile>
-    <ClCompile Include="C:\C_Cpp_LIB\Third_Party\FreeRTOS\FreeRTOS\Demo\Common\Minimal\flop.c">
-      <Filter>Demo App Source\Full_Demo\Common Demo Tasks</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\C_Cpp_LIB\Third_Party\FreeRTOS\FreeRTOS\Demo\Common\Minimal\GenQTest.c">
-      <Filter>Demo App Source\Full_Demo\Common Demo Tasks</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\C_Cpp_LIB\Third_Party\FreeRTOS\FreeRTOS\Demo\Common\Minimal\integer.c">
-      <Filter>Demo App Source\Full_Demo\Common Demo Tasks</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\C_Cpp_LIB\Third_Party\FreeRTOS\FreeRTOS\Demo\Common\Minimal\PollQ.c">
-      <Filter>Demo App Source\Full_Demo\Common Demo Tasks</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\C_Cpp_LIB\Third_Party\FreeRTOS\FreeRTOS\Demo\Common\Minimal\QPeek.c">
-      <Filter>Demo App Source\Full_Demo\Common Demo Tasks</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\C_Cpp_LIB\Third_Party\FreeRTOS\FreeRTOS\Demo\Common\Minimal\semtest.c">
-      <Filter>Demo App Source\Full_Demo\Common Demo Tasks</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\C_Cpp_LIB\Third_Party\FreeRTOS\FreeRTOS\Demo\Common\Minimal\BlockQ.c">
-      <Filter>Demo App Source\Full_Demo\Common Demo Tasks</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\C_Cpp_LIB\Third_Party\FreeRTOS\FreeRTOS\Demo\Common\Minimal\blocktim.c">
-      <Filter>Demo App Source\Full_Demo\Common Demo Tasks</Filter>
-    </ClCompile>
     <ClCompile Include="C:\C_Cpp_LIB\Third_Party\FreeRTOS\FreeRTOS\Source\FreeRTOS-Kernel\timers.c">
       <Filter>FreeRTOS Source\Source</Filter>
     </ClCompile>
-    <ClCompile Include="C:\C_Cpp_LIB\Third_Party\FreeRTOS\FreeRTOS\Demo\Common\Minimal\timerdemo.c">
-      <Filter>Demo App Source\Full_Demo\Common Demo Tasks</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\C_Cpp_LIB\Third_Party\FreeRTOS\FreeRTOS\Demo\Common\Minimal\countsem.c">
-      <Filter>Demo App Source\Full_Demo\Common Demo Tasks</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\C_Cpp_LIB\Third_Party\FreeRTOS\FreeRTOS\Demo\Common\Minimal\death.c">
-      <Filter>Demo App Source\Full_Demo\Common Demo Tasks</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\C_Cpp_LIB\Third_Party\FreeRTOS\FreeRTOS\Demo\Common\Minimal\dynamic.c">
-      <Filter>Demo App Source\Full_Demo\Common Demo Tasks</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\C_Cpp_LIB\Third_Party\FreeRTOS\FreeRTOS\Demo\Common\Minimal\QueueSet.c">
-      <Filter>Demo App Source\Full_Demo\Common Demo Tasks</Filter>
-    </ClCompile>
     <ClCompile Include="Run-time-stats-utils.c">
       <Filter>Demo App Source</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\C_Cpp_LIB\Third_Party\FreeRTOS\FreeRTOS\Demo\Common\Minimal\QueueOverwrite.c">
-      <Filter>Demo App Source\Full_Demo\Common Demo Tasks</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\C_Cpp_LIB\Third_Party\FreeRTOS\FreeRTOS\Demo\Common\Minimal\EventGroupsDemo.c">
-      <Filter>Demo App Source\Full_Demo\Common Demo Tasks</Filter>
     </ClCompile>
     <ClCompile Include="C:\C_Cpp_LIB\Third_Party\FreeRTOS\FreeRTOS\Source\FreeRTOS-Kernel\event_groups.c">
       <Filter>FreeRTOS Source\Source</Filter>
     </ClCompile>
     <ClCompile Include="C:\C_Cpp_LIB\Third_Party\FreeRTOS\FreeRTOS\Source\FreeRTOS-Kernel\portable\MemMang\heap_5.c">
       <Filter>FreeRTOS Source\Source\Portable</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\C_Cpp_LIB\Third_Party\FreeRTOS\FreeRTOS\Demo\Common\Minimal\IntSemTest.c">
-      <Filter>Demo App Source\Full_Demo\Common Demo Tasks</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\C_Cpp_LIB\Third_Party\FreeRTOS\FreeRTOS\Demo\Common\Minimal\TaskNotify.c">
-      <Filter>Demo App Source\Full_Demo\Common Demo Tasks</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\C_Cpp_LIB\Third_Party\FreeRTOS\FreeRTOS\Demo\Common\Minimal\QueueSetPolling.c">
-      <Filter>Demo App Source\Full_Demo\Common Demo Tasks</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\C_Cpp_LIB\Third_Party\FreeRTOS\FreeRTOS\Demo\Common\Minimal\recmutex.c">
-      <Filter>Demo App Source\Full_Demo\Common Demo Tasks</Filter>
-    </ClCompile>
-    <ClCompile Include="main_full.c">
-      <Filter>Demo App Source\Full_Demo</Filter>
-    </ClCompile>
-    <ClCompile Include="main_blinky.c">
-      <Filter>Demo App Source\Blinky_Demo</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\C_Cpp_LIB\Third_Party\FreeRTOS\FreeRTOS\Demo\Common\Minimal\StaticAllocation.c">
-      <Filter>Demo App Source\Full_Demo\Common Demo Tasks</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\C_Cpp_LIB\Third_Party\FreeRTOS\FreeRTOS\Demo\Common\Minimal\AbortDelay.c">
-      <Filter>Demo App Source\Full_Demo\Common Demo Tasks</Filter>
     </ClCompile>
     <ClCompile Include="C:\C_Cpp_LIB\Third_Party\FreeRTOS\FreeRTOS-Plus\Source\FreeRTOS-Plus-Trace\trcKernelPort.c">
       <Filter>Demo App Source\FreeRTOS+Trace Recorder</Filter>
@@ -159,21 +90,6 @@
     </ClCompile>
     <ClCompile Include="C:\C_Cpp_LIB\Third_Party\FreeRTOS\FreeRTOS\Source\FreeRTOS-Kernel\stream_buffer.c">
       <Filter>FreeRTOS Source\Source</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\C_Cpp_LIB\Third_Party\FreeRTOS\FreeRTOS\Demo\Common\Minimal\MessageBufferDemo.c">
-      <Filter>Demo App Source\Full_Demo\Common Demo Tasks</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\C_Cpp_LIB\Third_Party\FreeRTOS\FreeRTOS\Demo\Common\Minimal\StreamBufferDemo.c">
-      <Filter>Demo App Source\Full_Demo\Common Demo Tasks</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\C_Cpp_LIB\Third_Party\FreeRTOS\FreeRTOS\Demo\Common\Minimal\StreamBufferInterrupt.c">
-      <Filter>Demo App Source\Full_Demo\Common Demo Tasks</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\C_Cpp_LIB\Third_Party\FreeRTOS\FreeRTOS\Demo\Common\Minimal\MessageBufferAMP.c">
-      <Filter>Demo App Source\Full_Demo\Common Demo Tasks</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\C_Cpp_LIB\Third_Party\FreeRTOS\FreeRTOS\Demo\Common\Minimal\TaskNotifyArray.c">
-      <Filter>Demo App Source\Full_Demo\Common Demo Tasks</Filter>
     </ClCompile>
     <ClCompile Include="C:\C_Cpp_LIB\Tree_Back_Model\src\Tree_Back_Message_Queue.c">
       <Filter>My_Code\Tree_Back_Model\src</Filter>

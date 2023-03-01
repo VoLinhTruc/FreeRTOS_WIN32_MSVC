@@ -97,7 +97,7 @@ void task0(void* pvParameters)
             //// delete the task itself test
             //deleteTBTask(&tb_task);
 
-            TB_Task_Handle found_tb_task_handle = initTBTaskTable();
+            TB_Task_Handle found_tb_task_handle = initTBTask();
             if (getTBTaskHandleByName("task1", &found_tb_task_handle) == GET_TB_TASK_HANDLE_BY_NAME_OK)
             {
                 quickEnqueueTBMQ(found_tb_task_handle->qin, "From task 0", "This is message from task 0", pcTaskGetName(tb_task->task));
@@ -129,10 +129,6 @@ void task0(void* pvParameters)
         }
 
         printf("Number of task %d", getTBTaskCount());
-        if (getTBTaskCount() == 0)
-        {
-            return;
-        }
 
         count++;
         vTaskDelay(500);
